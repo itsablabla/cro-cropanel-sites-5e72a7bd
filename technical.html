@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical — nomadinternet.com</title>
+<link rel="stylesheet" href="cro_system.css">
+<style>:root{--green:#995c00;--teal:#ffb23d;--navy:#1f180c;--mid:#2d2213;--light:#3f311c;--muted:#a79c8b;--off:#e5e1dc;}</style></head>
+<body>
+<header>
+  <a class="logo-area" href="index.html" style="text-decoration:none">
+    <div class="logo-dot">N</div>
+    <div>
+      <div class="logo-text">nomadinternet.com</div>
+      <div class="logo-sub">CRO Recommendations — August 2026</div>
+    </div>
+  </a>
+  <nav class="nav"><a href="index.html">Overview</a><a href="roadmap.html">Roadmap</a><a href="technical.html" class="active">Technical</a><a href="appendix.html">Findings</a><a href="methodology.html">Method</a></nav>
+</header>
+
+<div class="wrap">
+  <div class="section">
+    <div class="eyebrow-label">Measured, not inferred</div>
+    <h2 class="section-title">Technical audit</h2>
+    <p class="section-intro">Everything on this page was measured directly against
+      nomadinternet.com on August 2026 and is reproducible.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Core Web Vitals</h2>
+    <div class="caveat"><strong>Field data unavailable</strong>the configured Google API key does not have the PageSpeed Insights API enabled; enable it in Google Cloud, or supply a dedicated key at u/admin/PAGESPEED_API_KEY</div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Speed &amp; delivery</h2>
+    <div class="tscroll"><table class="dtable">
+      <thead><tr><th>Check</th><th class="num">Measured</th><th>Why it matters</th></tr></thead>
+      <tbody>
+    <tr><td>Server response (TTFB proxy)</td>
+      <td class="num"><span class="check-pass">362 ms</span></td>
+      <td>Under 800ms is healthy</td></tr>
+    <tr><td>HTML document weight</td><td class="num">403 KB</td>
+      <td>Every byte is parsed before first paint</td></tr>
+    <tr><td>Scripts loaded</td>
+      <td class="num">33 inline + 32 external</td>
+      <td>The usual root cause of slow interactivity</td></tr>
+    <tr><td>Compression</td><td><span class="check-pass">gzip</span></td>
+      <td>gzip / brotli on HTML responses</td></tr>
+    <tr><td>HTTPS</td><td><span class="check-pass">pass</span></td><td>With redirect from http://</td></tr></tbody></table></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Search &amp; metadata</h2>
+    
+    <div class="tscroll"><table class="dtable">
+      <thead><tr><th>Check</th><th>Status</th><th>Notes</th></tr></thead>
+      <tbody>
+    <tr><td>Title tag</td><td><span class="check-fail">missing</span></td>
+      <td>15–60 characters recommended</td></tr>
+    <tr><td>Meta description</td><td><span class="check-pass">151 chars</span></td>
+      <td>70–160 characters recommended</td></tr>
+    <tr><td>Canonical URL</td><td><span class="check-pass">pass</span></td><td>Prevents duplicate-content splits</td></tr>
+    <tr><td>Open Graph (og:title / og:image)</td><td><span class="check-fail">missing</span></td>
+      <td>Controls link previews when shared</td></tr>
+    <tr><td>Structured data (JSON-LD)</td><td><span class="check-pass">pass</span></td>
+      <td>Enables rich results in search</td></tr>
+    <tr><td>Indexable</td><td><span class="check-pass">yes</span></td>
+      <td>no robots meta restrictions</td></tr>
+    <tr><td>robots.txt</td><td><span class="check-pass">pass</span></td>
+      <td>References sitemap</td></tr>
+    <tr><td>sitemap.xml</td><td><span class="check-pass">pass</span></td>
+      <td>Crawl coverage for search engines</td></tr></tbody></table></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Security headers</h2>
+    <div class="tscroll"><table class="dtable">
+      <thead><tr><th>Header</th><th>Status</th><th>Protects against</th></tr></thead>
+      <tbody><tr><td>CSP</td><td><span class="check-pass">pass</span></td><td>Blocks injected scripts (XSS)</td></tr><tr><td>HSTS</td><td><span class="check-pass">pass</span></td><td>Forces HTTPS on every future visit</td></tr><tr><td>Referrer-Policy</td><td><span class="check-fail">missing</span></td><td>Controls what leaks in the Referer header</td></tr><tr><td>X-Frame-Options</td><td><span class="check-fail">missing</span></td><td>Prevents clickjacking via iframes</td></tr><tr><td>Permissions-Policy</td><td><span class="check-fail">missing</span></td><td>Limits camera/mic/geolocation access</td></tr><tr><td>X-Content-Type-Options</td><td><span class="check-pass">pass</span></td><td>Stops MIME-type sniffing</td></tr></tbody></table></div>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Accessibility</h2>
+    <div class="tscroll"><table class="dtable">
+      <thead><tr><th>Check</th><th class="num">Count</th><th>Standard</th></tr></thead>
+      <tbody>
+    <tr><td>Buttons without an accessible name</td>
+      <td class="num">5 / 46</td>
+      <td>WCAG 2.2 — 4.1.2 Name, Role, Value</td></tr>
+    <tr><td>Images missing alt text</td>
+      <td class="num">1 / 66</td>
+      <td>WCAG 2.2 — 1.1.1 Non-text Content</td></tr>
+    <tr><td>Unlabelled form inputs</td>
+      <td class="num">0 / 5</td>
+      <td>WCAG 2.2 — 3.3.2 Labels or Instructions</td></tr>
+    <tr><td>Links without text</td>
+      <td class="num">10 / 79</td>
+      <td>Screen readers announce these as "link"</td></tr></tbody></table></div>
+  </div>
+</div>
+<div class="footer">
+  Prepared by <strong>The CRO Panel</strong> · <a href="mailto:panel@example.com">panel@example.com</a> · <a href="methodology.html">Method &amp; confidence</a>
+</div>
+<div class="modal-overlay" id="modal-root"><div class="modal-box"></div></div>
+<script>
+(function(){
+  var root=document.getElementById('modal-root');
+  function close(){root.classList.remove('open');}
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('[data-m]');
+    if(b){var t=document.getElementById('m-'+b.getAttribute('data-m'));
+      if(t){root.querySelector('.modal-box').innerHTML=
+        '<button class="modal-close" aria-label="Close">\u00d7</button>'+t.innerHTML;
+        root.classList.add('open');}return;}
+    if(e.target.closest('.modal-close')||e.target===root)close();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  function scale(){
+    document.querySelectorAll('.card-preview .preview-inner').forEach(function(el){
+      var w=el.parentElement.clientWidth;if(!w)return;
+      var s=w/1280;el.style.transform='scale('+s+')';
+      el.parentElement.style.height=Math.round(514*s)+'px';});
+  }
+  scale();window.addEventListener('resize',scale);
+  function pos(){
+    document.querySelectorAll('.shot-scroll[data-frac]').forEach(function(el){
+      var img=el.querySelector('img');
+      var go=function(){var f=parseFloat(el.getAttribute('data-frac'))||0;
+        el.scrollTop=f*(el.scrollHeight-el.clientHeight);};
+      if(img&&!img.complete){img.addEventListener('load',go);}else{go();}
+    });
+  }
+  pos();
+})();
+</script>
+</body>
+</html>
